@@ -11,7 +11,7 @@ interface RefreshEntriesType {
 
 export default function AddEntryForm({ refreshEntries }: RefreshEntriesType) {
   const [isOpen, setIsOpen] = useState(false);
-  const { riders, loading } = useAllRiders();
+  const { riders} = useAllRiders();
 
   const [date, setDate] = useState("");
   const [rider, setRider] = useState("");
