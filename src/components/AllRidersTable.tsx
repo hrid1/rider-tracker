@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { db } from "@/lib/firebase";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import AddRider from "./AddRider";
+import toast from "react-hot-toast";
+
 
 type Rider = {
   id: string;
@@ -28,6 +30,7 @@ export default function AllRidersTable() {
   const handleDelete = async (id: string) => {
     if (confirm("Are you sure you want to delete this rider?")) {
       await deleteDoc(doc(db, "riders", id));
+      toast.success("Rider deleted successfully")
       fetchRiders();
     }
   };

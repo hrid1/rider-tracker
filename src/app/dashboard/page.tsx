@@ -85,7 +85,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Section Blocks */}
-      <section className="grid grid-cols-2 gap-6">
+      {/* <section className="grid grid-cols-2 gap-6">
         <DashboardBlock
           title="➕ Add Daily Entry"
           description="Form will go here."
@@ -101,7 +101,7 @@ export default function DashboardPage() {
           title="📅 Monthly Report"
           description="Dropdown and Generate button."
         />
-      </section>
+      </section> */}
 
       {/* All riders */}
       <AllRiders />

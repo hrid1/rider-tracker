@@ -11,9 +11,12 @@ interface RefreshEntriesType {
 
 export default function AddEntryForm({ refreshEntries }: RefreshEntriesType) {
   const [isOpen, setIsOpen] = useState(false);
-  const { riders} = useAllRiders();
+  const { riders } = useAllRiders();
 
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(() => {
+    const today = new Date();
+    return today.toISOString().split("T")[0]; // "YYYY-MM-DD"
+  });
   const [rider, setRider] = useState("");
   const [delivered, setDelivered] = useState("");
   const [failed, setFailed] = useState("");
@@ -66,7 +69,7 @@ export default function AddEntryForm({ refreshEntries }: RefreshEntriesType) {
         onClick={() => setIsOpen(!isOpen)}
         className="text-white bg-gray-800 px-3 py-2 rounded-md hover:bg-gray-900 cursor-pointer transition-colors duration-300"
       >
-        Add Rider +
+        Add Entries +
       </button>
 
       {/* modal div */}
