@@ -14,7 +14,7 @@ export default function Home() {
           Track. Analyze. Improve.
         </h2>
         <p className="text-lg text-gray-600 max-w-xl mx-auto">
-          Welcome to the EMON Delivery App Dashboard – your all-in-one tool for monitoring rider performance, delivery stats, and operational efficiency.
+          Welcome to the Rider Delivery App Dashboard – your all-in-one tool for monitoring rider performance, delivery stats, and operational efficiency.
         </p>
 
         <div className="mt-10 flex justify-center gap-4">

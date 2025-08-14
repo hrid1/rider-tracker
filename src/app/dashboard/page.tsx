@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { db } from "@/lib/firebase";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import AllRiders from "@/components/AllRiders";
+import MonthlyReport from "@/components/MonthlyReport";
 
 type Entry = {
   date: string;
@@ -50,14 +51,14 @@ export default function DashboardPage() {
       </p>
     );
   return (
-    <main className=" bg-gray-50 px-4 py-10 container mx-auto">
+    <main className=" bg-gray-50 px-4 py-10 container mx-auto ">
       <div>
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-12 flex items-center justify-center gap-2">
           🛵 <span>Rider Performance Dashboard</span>
         </h1>
       </div>
       {/* Stat Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <StatCard
           title="Success Ratio"
           value={`${successRatio}%`}
@@ -104,7 +105,15 @@ export default function DashboardPage() {
       </section> */}
 
       {/* All riders */}
-      <AllRiders />
+
+      <section className="p-2 flex flex-col md:flex-row ">
+        <div className="w-full md:w-4/5 ">
+          <AllRiders />
+        </div>
+
+        <div className="md:w-1/5 mt-10">
+        <MonthlyReport/></div>
+      </section>
     </main>
   );
 }

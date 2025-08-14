@@ -74,7 +74,7 @@ export default function AddEntryForm({ refreshEntries }: RefreshEntriesType) {
 
       {/* modal div */}
       {isOpen && (
-        <div className=" bg-gray-900/50 fixed inset-0 backdrop-blur-[2px]">
+        <div className="z-50 bg-gray-900/50 fixed inset-0 backdrop-blur-[2px]">
           <div className="flex items-center justify-center h-full w-full">
             <div className="w-full max-w-md bg-white rounded-2xl shadow-md border border-gray-100 relative p-6">
               <div className=" relative">
